@@ -81,6 +81,12 @@ input:focus,textarea:focus,select:focus{border-color:#7f72ff}
 textarea{min-height:140px;resize:vertical}
 footer{border-top:1px solid rgba(255,255,255,.07);padding:35px 0;color:#7f889d;font-size:.82rem}
 .footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+.whatsapp-float{position:fixed;right:22px;bottom:22px;z-index:1100;display:flex;align-items:center;gap:10px;padding:13px 18px;border-radius:999px;background:#25D366;color:#07140b;font-weight:800;font-size:.88rem;box-shadow:0 12px 30px rgba(0,0,0,.35);transition:.25s}
+.whatsapp-float:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 16px 35px rgba(37,211,102,.25)}
+.whatsapp-icon{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#fff;color:#25D366;font-size:17px;font-weight:900}
+@media(max-width:560px){.whatsapp-float{right:15px;bottom:15px;padding:12px 15px}.whatsapp-float span:last-child{display:none}}
+
 @media(max-width:850px){
 .nav-links{display:none;position:absolute;top:72px;left:0;width:100%;padding:20px;background:#080d19;border-bottom:1px solid rgba(255,255,255,.08);flex-direction:column;gap:20px}
 .nav-links.open{display:flex}.menu{display:block}.nav-cta{display:none}
@@ -137,11 +143,11 @@ h1{letter-spacing:-2.5px}.hero{padding-top:105px}.hero-card{padding:18px}
 <div class="section-head"><div class="eyebrow">Our Services</div><h2>Simple services. <span class="gradient">Smart outcomes.</span></h2><p>Focused solutions for businesses that want a stronger online presence and smarter technology.</p></div>
 <div class="cards">
 <div class="card"><div class="icon">WP</div><h3>WordPress Website Development</h3><p>Professional, responsive and conversion-focused WordPress websites for businesses, brands and startups.</p><div class="tags"><span class="tag">Business Websites</span><span class="tag">Landing Pages</span><span class="tag">WooCommerce</span></div></div>
+<div class="card"><div class="icon">EC</div><h3>E-commerce / WooCommerce</h3><p>Build user-friendly online stores with WooCommerce, product catalogs, secure checkout and conversion-focused design.</p><div class="tags"><span class="tag">Online Store</span><span class="tag">WooCommerce</span><span class="tag">Payments</span></div></div>
 <div class="card"><div class="icon">SEO</div><h3>Digital Marketing & SEO</h3><p>Data-driven digital marketing strategies to improve visibility, traffic, leads and online growth.</p><div class="tags"><span class="tag">SEO</span><span class="tag">Local SEO</span><span class="tag">Social Media</span></div></div>
+<div class="card"><div class="icon">ADS</div><h3>Google Ads / Performance Marketing</h3><p>Targeted paid campaigns designed to reach the right audience, generate quality leads and improve marketing performance.</p><div class="tags"><span class="tag">Google Ads</span><span class="tag">Lead Generation</span><span class="tag">Campaigns</span></div></div>
 <div class="card"><div class="icon">AI</div><h3>AI Solutions</h3><p>Practical AI applications that help businesses automate tasks, use data better and improve customer experiences.</p><div class="tags"><span class="tag">AI Automation</span><span class="tag">RAG</span><span class="tag">Chatbots</span></div></div>
-<div class="card"><div class="icon">⚙</div><h3>AI Automation</h3><p>Connect repetitive business workflows with intelligent automation and API-based solutions.</p><div class="tags"><span class="tag">Workflows</span><span class="tag">APIs</span><span class="tag">Agents</span></div></div>
-<div class="card"><div class="icon">DATA</div><h3>Data Analytics</h3><p>Turn business data into dashboards, insights and predictive intelligence for better decisions.</p><div class="tags"><span class="tag">Analytics</span><span class="tag">Dashboards</span><span class="tag">ML</span></div></div>
-<div class="card"><div class="icon">↗</div><h3>AI-Powered Digital Growth</h3><p>Combine website, marketing, analytics and AI to create a smarter digital growth system.</p><div class="tags"><span class="tag">Strategy</span><span class="tag">AI + SEO</span><span class="tag">Growth</span></div></div>
+<div class="card"><div class="icon">⚙</div><h3>AI Automation</h3><p>Connect repetitive business workflows with intelligent automation and API-based solutions.</p><div class="tags"><span class="tag">Workflows</span><span class="tag">APIs</span><span class="tag">AI Agents</span></div></div>
 </div>
 </div>
 </section>
@@ -209,15 +215,19 @@ h1{letter-spacing:-2.5px}.hero{padding-top:105px}.hero-card{padding:18px}
 <div class="eyebrow">Contact</div><h2>Let's build something <span class="gradient">better.</span></h2>
 <p>Tell us what you need and we'll get back to you with the next steps.</p>
 <div class="contact-list">
-<div>✉ hello@shiavi.ai</div><div>☎ +91 7393847800</div><div>⌖ India</div><div>◉ LinkedIn • Instagram • GitHub</div>
+<div>✉ hello@shiavi.ai</div><div>☎ <a href="tel:+917393847800">+91 7393847800</a></div><div>⌖ India</div><div>◉ LinkedIn • Instagram • GitHub</div>
 </div>
 </div>
-<form onsubmit="sendMessage(event)">
-<input required type="text" placeholder="Your Name">
-<input required type="email" placeholder="Email Address">
-<input type="text" placeholder="Company / Business">
-<select><option>Select a service</option><option>WordPress Website</option><option>Digital Marketing & SEO</option><option>AI Solution</option><option>AI Automation</option><option>Data Analytics</option></select>
-<textarea placeholder="Tell us about your project..." required></textarea>
+<form action="https://api.web3forms.com/submit" method="POST">
+<input type="hidden" name="access_key" value="9bddde72-5042-4df0-85e1-fe4773dd92e9">
+<input type="hidden" name="subject" value="New Shiavi AI Website Inquiry">
+<input type="hidden" name="from_name" value="Shiavi AI Website">
+<input type="checkbox" name="botcheck" style="display:none">
+<input required type="text" name="name" placeholder="Your Name">
+<input required type="email" name="email" placeholder="Email Address">
+<input type="text" name="company" placeholder="Company / Business">
+<select name="service" required><option value="">Select a service</option><option>WordPress Website</option><option>E-commerce / WooCommerce</option><option>Digital Marketing & SEO</option><option>Google Ads / Performance Marketing</option><option>AI Solution</option><option>AI Automation</option><option>Data Analytics</option></select>
+<textarea name="message" placeholder="Tell us about your project..." required></textarea>
 <button class="btn btn-primary" type="submit">Send Inquiry →</button>
 </form>
 </div>
@@ -235,10 +245,10 @@ h1{letter-spacing:-2.5px}.hero{padding-top:105px}.hero-card{padding:18px}
 const menu=document.getElementById("menu"),links=document.getElementById("navLinks");
 menu.onclick=()=>links.classList.toggle("open");
 document.querySelectorAll(".nav-links a").forEach(a=>a.onclick=()=>links.classList.remove("open"));
-function sendMessage(e){
- e.preventDefault();
- alert("Thank you! Your inquiry form is ready. Connect this form to Formspree, Web3Forms, or your backend to receive submissions.");
-}
+
 </script>
+
+<a class="whatsapp-float" href="https://wa.me/917393847800?text=Hi%20Shiavi%20AI%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener noreferrer" aria-label="Chat with Shiavi AI on WhatsApp"><span class="whatsapp-icon">◔</span><span>Chat on WhatsApp</span></a>
+
 </body>
 </html>
