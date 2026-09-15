@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shiavi-ai-nceg.vercel.app/sitemap.xml
