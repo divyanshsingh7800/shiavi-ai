@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Shiavi AI provides professional WordPress website development, digital marketing, SEO and AI solutions for modern businesses.">
+<meta name="keywords" content="WordPress Website Development, Digital Marketing, SEO Services, AI Solutions, AI Automation, Shiavi AI">
+<title>Shiavi AI | WordPress, Digital Marketing & AI Solutions</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#070b16;color:#f5f7ff;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(7,11,22,.78);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07)}
+.navbar{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:1.45rem;font-weight:800;letter-spacing:-.5px}
+.logo span{color:#8b7cff}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{font-size:.93rem;color:#b9c0d4;transition:.25s}
+.nav-links a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:10px;font-weight:700;font-size:.92rem;transition:.25s}
+.btn-primary{background:linear-gradient(135deg,#7c6cff,#a46cff);box-shadow:0 10px 30px rgba(124,108,255,.2)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 15px 35px rgba(124,108,255,.3)}
+.btn-outline{border:1px solid rgba(255,255,255,.15);color:#fff}
+.menu{display:none;font-size:1.5rem;cursor:pointer}
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 70px;position:relative;overflow:hidden}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;filter:blur(80px);opacity:.25;pointer-events:none}
+.hero:before{width:380px;height:380px;background:#635bff;top:80px;right:5%}
+.hero:after{width:280px;height:280px;background:#a855f7;bottom:-100px;left:5%}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center;position:relative;z-index:1}
+.badge{display:inline-flex;padding:8px 13px;border:1px solid rgba(139,124,255,.3);background:rgba(139,124,255,.08);border-radius:30px;color:#c8c1ff;font-size:.82rem;margin-bottom:22px}
+h1{font-size:clamp(3rem,6vw,5.4rem);line-height:1.02;letter-spacing:-4px;max-width:760px}
+.gradient{background:linear-gradient(90deg,#fff,#a99cff,#d6a5ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:#aeb6ca;font-size:1.12rem;max-width:650px;margin:24px 0 32px}
+.actions{display:flex;gap:13px;flex-wrap:wrap}
+.hero-card{border:1px solid rgba(255,255,255,.1);background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025));border-radius:24px;padding:28px;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.visual{height:420px;display:flex;align-items:center;justify-content:center;position:relative}
+.orbit{width:260px;height:260px;border:1px solid rgba(139,124,255,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative}
+.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.08);border-radius:50%}
+.orbit:before{inset:25px}.orbit:after{inset:55px}
+.core{width:105px;height:105px;border-radius:28px;background:linear-gradient(135deg,#7568ff,#b66cff);display:grid;place-items:center;font-size:2rem;font-weight:900;box-shadow:0 0 70px rgba(126,105,255,.45)}
+.node{position:absolute;width:52px;height:52px;border-radius:15px;background:#10172a;border:1px solid rgba(255,255,255,.13);display:grid;place-items:center;font-size:.72rem;font-weight:800;color:#d7d4ff}
+.n1{top:8px}.n2{right:10px}.n3{bottom:8px}.n4{left:10px}
+section{padding:100px 0}
+.section-head{max-width:700px;margin-bottom:48px}
+.eyebrow{color:#988bff;text-transform:uppercase;letter-spacing:2px;font-size:.76rem;font-weight:800;margin-bottom:12px}
+h2{font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-1.5px;line-height:1.1}
+.section-head p{color:#9da6bb;margin-top:16px}
+.services{background:#0a0f1d}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{padding:28px;border:1px solid rgba(255,255,255,.08);background:#0e1424;border-radius:18px;transition:.3s}
+.card:hover{transform:translateY(-6px);border-color:rgba(139,124,255,.4)}
+.icon{width:48px;height:48px;border-radius:13px;background:rgba(124,108,255,.12);display:grid;place-items:center;color:#a89dff;font-weight:900;margin-bottom:20px}
+.card h3{font-size:1.15rem;margin-bottom:10px}
+.card p{color:#929bb0;font-size:.93rem}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+.tag{font-size:.72rem;padding:5px 9px;border-radius:20px;background:#151d31;color:#b9c1d5}
+.why-grid,.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.points{display:grid;gap:16px}
+.point{padding:20px;border-left:2px solid #8174ff;background:rgba(255,255,255,.025);border-radius:0 12px 12px 0}
+.point h3{font-size:1rem;margin-bottom:4px}.point p{color:#929bb0;font-size:.9rem}
+.process{background:#0a0f1d}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.step{padding:24px;border-top:2px solid #786aff;background:#0e1424;border-radius:0 0 15px 15px}
+.num{font-size:.75rem;color:#9589ff;font-weight:800;margin-bottom:18px}
+.step h3{margin-bottom:7px}.step p{font-size:.87rem;color:#929bb0}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.project{min-height:250px;padding:27px;border:1px solid rgba(255,255,255,.08);border-radius:18px;background:linear-gradient(145deg,#10172a,#0b101d);display:flex;flex-direction:column;justify-content:flex-end}
+.project .small{color:#9387ff;font-size:.75rem;font-weight:800;margin-bottom:10px;text-transform:uppercase}
+.project h3{font-size:1.25rem}.project p{color:#929bb0;font-size:.88rem;margin-top:8px}
+.tech{display:flex;flex-wrap:wrap;gap:10px}
+.tech span{padding:10px 15px;border:1px solid rgba(255,255,255,.08);background:#0e1424;border-radius:10px;color:#b7bfd2;font-size:.84rem}
+.cta{padding:70px 35px;border:1px solid rgba(139,124,255,.2);border-radius:24px;text-align:center;background:radial-gradient(circle at 50% 0%,rgba(124,108,255,.18),transparent 55%),#0d1323}
+.cta p{color:#a2abc0;max-width:600px;margin:15px auto 25px}
+.contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:45px}
+.contact-info p{color:#929bb0;margin-top:14px}.contact-list{margin-top:28px;display:grid;gap:12px;color:#c2c9d9}
+form{display:grid;gap:13px}
+input,textarea,select{width:100%;padding:14px 15px;background:#0e1424;border:1px solid rgba(255,255,255,.1);border-radius:10px;color:#fff;font:inherit;outline:none}
+input:focus,textarea:focus,select:focus{border-color:#7f72ff}
+textarea{min-height:140px;resize:vertical}
+footer{border-top:1px solid rgba(255,255,255,.07);padding:35px 0;color:#7f889d;font-size:.82rem}
+.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+.whatsapp-float{position:fixed;right:22px;bottom:22px;z-index:1100;display:flex;align-items:center;gap:10px;padding:13px 18px;border-radius:999px;background:#25D366;color:#07140b;font-weight:800;font-size:.88rem;box-shadow:0 12px 30px rgba(0,0,0,.35);transition:.25s}
+.whatsapp-float:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 16px 35px rgba(37,211,102,.25)}
+.whatsapp-icon{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#fff;color:#25D366;font-size:17px;font-weight:900}
+@media(max-width:560px){.whatsapp-float{right:15px;bottom:15px;padding:12px 15px}.whatsapp-float span:last-child{display:none}}
+
+@media(max-width:850px){
+.nav-links{display:none;position:absolute;top:72px;left:0;width:100%;padding:20px;background:#080d19;border-bottom:1px solid rgba(255,255,255,.08);flex-direction:column;gap:20px}
+.nav-links.open{display:flex}.menu{display:block}.nav-cta{display:none}
+.hero-grid,.why-grid,.about-grid,.contact{grid-template-columns:1fr}.visual{height:330px}
+.cards,.projects{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+h1{letter-spacing:-2.5px}.hero{padding-top:105px}.hero-card{padding:18px}
+.cards,.projects,.steps{grid-template-columns:1fr}section{padding:75px 0}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="container navbar">
+<a href="#home" class="logo">Shiavi<span> AI</span></a>
+<div class="nav-links" id="navLinks">
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#why">Why Shiavi</a>
+<a href="#projects">Projects</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</div>
+<a href="#contact" class="btn btn-primary nav-cta">Let's Talk</a>
+<div class="menu" id="menu">☰</div>
+</div>
+</nav>
+
+<main>
+<section class="hero" id="home">
+<div class="container hero-grid">
+<div>
+<div class="badge">AI • DIGITAL GROWTH • SMART SOLUTIONS</div>
+<h1>Build Digital.<br><span class="gradient">Think Intelligent.</span></h1>
+<p><strong>Shiavi AI</strong> helps businesses grow with professional WordPress websites, digital marketing, SEO and practical AI solutions.</p>
+<div class="actions">
+<a href="#contact" class="btn btn-primary">Start a Project →</a>
+<a href="#services" class="btn btn-outline">Explore Services</a>
+</div>
+</div>
+<div class="hero-card visual">
+<div class="orbit">
+<div class="core">AI</div>
+<div class="node n1">WEB</div><div class="node n2">SEO</div><div class="node n3">AI</div><div class="node n4">GROW</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="services" id="services">
+<div class="container">
+<div class="section-head"><div class="eyebrow">Our Services</div><h2>Simple services. <span class="gradient">Smart outcomes.</span></h2><p>Focused solutions for businesses that want a stronger online presence and smarter technology.</p></div>
+<div class="cards">
+<div class="card"><div class="icon">WP</div><h3>WordPress Website Development</h3><p>Professional, responsive and conversion-focused WordPress websites for businesses, brands and startups.</p><div class="tags"><span class="tag">Business Websites</span><span class="tag">Landing Pages</span><span class="tag">WooCommerce</span></div></div>
+<div class="card"><div class="icon">EC</div><h3>E-commerce / WooCommerce</h3><p>Build user-friendly online stores with WooCommerce, product catalogs, secure checkout and conversion-focused design.</p><div class="tags"><span class="tag">Online Store</span><span class="tag">WooCommerce</span><span class="tag">Payments</span></div></div>
+<div class="card"><div class="icon">SEO</div><h3>Digital Marketing & SEO</h3><p>Data-driven digital marketing strategies to improve visibility, traffic, leads and online growth.</p><div class="tags"><span class="tag">SEO</span><span class="tag">Local SEO</span><span class="tag">Social Media</span></div></div>
+<div class="card"><div class="icon">ADS</div><h3>Google Ads / Performance Marketing</h3><p>Targeted paid campaigns designed to reach the right audience, generate quality leads and improve marketing performance.</p><div class="tags"><span class="tag">Google Ads</span><span class="tag">Lead Generation</span><span class="tag">Campaigns</span></div></div>
+<div class="card"><div class="icon">AI</div><h3>AI Solutions</h3><p>Practical AI applications that help businesses automate tasks, use data better and improve customer experiences.</p><div class="tags"><span class="tag">AI Automation</span><span class="tag">RAG</span><span class="tag">Chatbots</span></div></div>
+<div class="card"><div class="icon">⚙</div><h3>AI Automation</h3><p>Connect repetitive business workflows with intelligent automation and API-based solutions.</p><div class="tags"><span class="tag">Workflows</span><span class="tag">APIs</span><span class="tag">AI Agents</span></div></div>
+</div>
+</div>
+</section>
+
+<section id="why">
+<div class="container why-grid">
+<div class="section-head"><div class="eyebrow">Why Shiavi AI</div><h2>Technology that works for your <span class="gradient">business.</span></h2><p>We focus on practical solutions instead of unnecessary complexity.</p></div>
+<div class="points">
+<div class="point"><h3>Business First</h3><p>Every website, marketing campaign or AI solution starts with a clear business objective.</p></div>
+<div class="point"><h3>Modern & Practical</h3><p>We use modern tools while keeping solutions understandable, maintainable and useful.</p></div>
+<div class="point"><h3>One Digital Partner</h3><p>Website, SEO, digital marketing and AI solutions under one technology-focused team.</p></div>
+<div class="point"><h3>Built for Growth</h3><p>Our solutions are designed to support your next stage of digital growth.</p></div>
+</div>
+</div>
+</section>
+
+<section class="process">
+<div class="container">
+<div class="section-head"><div class="eyebrow">Our Process</div><h2>From idea to <span class="gradient">impact.</span></h2></div>
+<div class="steps">
+<div class="step"><div class="num">01 / DISCOVER</div><h3>Understand</h3><p>We understand your business, audience and goals.</p></div>
+<div class="step"><div class="num">02 / PLAN</div><h3>Strategize</h3><p>We choose the right website, marketing or AI approach.</p></div>
+<div class="step"><div class="num">03 / BUILD</div><h3>Execute</h3><p>We build, launch and optimize the solution.</p></div>
+<div class="step"><div class="num">04 / GROW</div><h3>Improve</h3><p>We measure performance and continuously improve.</p></div>
+</div>
+</div>
+</section>
+
+<section id="projects">
+<div class="container">
+<div class="section-head"><div class="eyebrow">Selected Work</div><h2>Solutions we've <span class="gradient">built.</span></h2><p>Examples of AI, analytics and digital solutions.</p></div>
+<div class="projects">
+<div class="project"><div class="small">AI / ML</div><h3>Intelligent E-Commerce Analytics</h3><p>Customer segmentation, purchase prediction, CLV and explainable AI.</p></div>
+<div class="project"><div class="small">DATA ANALYTICS</div><h3>Traffic Safety Intelligence</h3><p>Interactive analytics for understanding traffic crash patterns and risk factors.</p></div>
+<div class="project"><div class="small">GENERATIVE AI</div><h3>AI Knowledge Assistant</h3><p>RAG-based knowledge retrieval and intelligent question answering.</p></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-head"><div class="eyebrow">Technology</div><h2>Modern tools behind <span class="gradient">smart solutions.</span></h2></div>
+<div class="tech">
+<span>Python</span><span>Machine Learning</span><span>Generative AI</span><span>RAG</span><span>FastAPI</span><span>Scikit-learn</span><span>PyTorch</span><span>SQL</span><span>WordPress</span><span>SEO</span><span>Google Analytics</span><span>AI Automation</span>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="container about-grid">
+<div class="section-head"><div class="eyebrow">About Shiavi AI</div><h2>Digital solutions with an <span class="gradient">intelligent edge.</span></h2></div>
+<div><p style="color:#9da6bb">Shiavi AI is a technology and digital growth company focused on helping businesses build a strong online presence and adopt practical AI.</p><p style="color:#9da6bb;margin-top:18px">From WordPress websites and SEO to AI automation and machine learning solutions, we combine digital execution with modern technology to solve real business problems.</p></div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="cta"><div class="eyebrow">Let's Work Together</div><h2>Have a business idea or problem?</h2><p>Let's explore how a better website, smarter marketing or practical AI can help your business grow.</p><a href="#contact" class="btn btn-primary">Start a Conversation →</a></div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container contact">
+<div class="contact-info">
+<div class="eyebrow">Contact</div><h2>Let's build something <span class="gradient">better.</span></h2>
+<p>Tell us what you need and we'll get back to you with the next steps.</p>
+<div class="contact-list">
+<div>✉ hello@shiavi.ai</div><div>☎ <a href="tel:+917393847800">+91 7393847800</a></div><div>⌖ India</div><div>◉ LinkedIn • Instagram • GitHub</div>
+</div>
+</div>
+<form action="https://api.web3forms.com/submit" method="POST">
+<input type="hidden" name="access_key" value="9bddde72-5042-4df0-85e1-fe4773dd92e9">
+<input type="hidden" name="subject" value="New Shiavi AI Website Inquiry">
+<input type="hidden" name="from_name" value="Shiavi AI Website">
+<input type="checkbox" name="botcheck" style="display:none">
+<input required type="text" name="name" placeholder="Your Name">
+<input required type="email" name="email" placeholder="Email Address">
+<input type="text" name="company" placeholder="Company / Business">
+<select name="service" required><option value="">Select a service</option><option>WordPress Website</option><option>E-commerce / WooCommerce</option><option>Digital Marketing & SEO</option><option>Google Ads / Performance Marketing</option><option>AI Solution</option><option>AI Automation</option><option>Data Analytics</option></select>
+<textarea name="message" placeholder="Tell us about your project..." required></textarea>
+<button class="btn btn-primary" type="submit">Send Inquiry →</button>
+</form>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container footer-row">
+<div><strong style="color:#fff">Shiavi AI</strong> — AI/ML & Digital Marketing Solutions</div>
+<div>© 2026 Shiavi AI. All rights reserved.</div>
+</div>
+</footer>
+
+<script>
+const menu=document.getElementById("menu"),links=document.getElementById("navLinks");
+menu.onclick=()=>links.classList.toggle("open");
+document.querySelectorAll(".nav-links a").forEach(a=>a.onclick=()=>links.classList.remove("open"));
+
+</script>
+
+<a class="whatsapp-float" href="https://wa.me/917393847800?text=Hi%20Shiavi%20AI%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener noreferrer" aria-label="Chat with Shiavi AI on WhatsApp"><span class="whatsapp-icon">◔</span><span>Chat on WhatsApp</span></a>
+
+</body>
+</html>
